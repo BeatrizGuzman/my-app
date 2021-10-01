@@ -1,6 +1,10 @@
 import Header from "./Header"
 import Main from "./Main"
 import Footer from "./Footer"
+import ItemList from "./Components/ItemList"
+
+
+
 
 const App = () => {
 
@@ -8,15 +12,14 @@ const App = () => {
         <>
             <Header></Header> 
             <Main></Main>
+            <ItemList></ItemList>
             <Footer></Footer> 
         </>
     )
 }
 export default App
 
-//MAP
-const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map((number) => number * 2);
-console.log(doubled);
+
+
 
 
