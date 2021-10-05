@@ -33,4 +33,3 @@ export default function Item({id,tittle,description,precio,pictureUrl}) {
 }
 
 
-
