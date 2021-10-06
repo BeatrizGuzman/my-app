@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "description": "abc",
+        "precio": "xyz",
+        "phone": "+91 789654123",
+        "email": "abcyz@gmail.com"
+    },
+    {
+        "id": 2,
+        "description": "def",
+        "precio": "uvz",
+        "phone": "+91 123456987",
+        "email": "defvu@gmail.com"
+    }
+]

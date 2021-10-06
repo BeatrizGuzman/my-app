@@ -1,7 +1,8 @@
 // Listas
 
-import React from 'react'
-import { Card, CardImg, CardText, CardLink,  CardBody, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
+import React from 'react';
+import { Link } from "react-router-dom";
+import { Card, CardImg, CardText, CardBody, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 export default function Item({id,tittle,description,precio,pictureUrl}) {
     return (
     <div>
@@ -25,11 +26,9 @@ export default function Item({id,tittle,description,precio,pictureUrl}) {
             <ListGroupItem>Único número de entrega:<CardText>{id}</CardText></ListGroupItem>
         </ListGroup>
         <CardBody>
-            <CardLink href="#">¡Quiero saber más!</CardLink>
+        <Link className="btn btn-primary" to={'/producto/'+id}>VER</Link>
         </CardBody>
     </Card>
     </div>
     )
 }
-
-
