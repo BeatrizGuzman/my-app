@@ -4,12 +4,12 @@ import pic from './../assets/pic.png'
 
 function Navegacion() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
             <Link className="navbar-brand" to='/' >
                 <center>
-                    <h1>COMODYET</h1>
+                    <h1 style={{ color: "white"}}>COMODYET</h1>
                     <img className="pic" src={pic} alt='carrito'/>
-                    <i className="material-icons"> Una E-commerce destinada especialmente para vos</i>
+                    <i className="material-icons" style={{ color: "white"}}> Una E-commerce de prendas únicas destinada especialmente para vos</i>
                 </center>
             </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,10 +18,10 @@ function Navegacion() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-                <Link className="nav-link" to='/'>Home</Link>
+                <Link className="nav-link" to='/' style={{ color: "white"}}>Inicio</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/nosotros' >Nosotros</Link>
+              <Link className="nav-link" to='/nosotros' style={{ color: "white"}}>Quienes somos :)</Link>
             </li>
           </ul>
         </div>

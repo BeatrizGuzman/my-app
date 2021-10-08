@@ -1,5 +1,5 @@
 import React from 'react'
-import Navegacion from '../components/Navegacion'
+import Navegacion from '../Components/Navegacion'
 
 function Nosotros() {
     return (

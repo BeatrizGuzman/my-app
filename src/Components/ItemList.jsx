@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import Item from './Item';
 
-function ItemLIst() {
+function ItemLIst () {
 
     const [items,setItems]=useState([]);
     const leerItems = () => {
 
         let i=[
-            {id:"1",tittle:"Investigación",description:"Envíanos tu Investigación y nosotros la corregimos por vos",precio:700,pictureUrl:"https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"},
-            {id:"2",tittle:"Ensayo",description:"Envíanos tu Ensayo y nosotros lo corregimos por vos",precio:600,pictureUrl:"https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"},
-            {id:"3",tittle:"Monografía",description:"Envíanos tu Monografía y nosotros la corregimos por vos",precio:500,pictureUrl:"https://images.unsplash.com/photo-1501290741922-b56c0d0884af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1032&q=80"},
-            {id:"4",tittle:"Tesis",description:"Envíanos tu Tesis y nosotros la corregimos por vos",precio:400,pictureUrl:"https://images.unsplash.com/photo-1501163268664-3fdf329d019f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"},
-            {id:"5",tittle:"Tesina",description:"Envíanos tu Tesina y nosotros la corregimos por vos",precio:300,pictureUrl:"https://images.unsplash.com/photo-1484522676511-0f51cc572bb0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80"}
+            {id:"1",tittle:"Bolso",description:"Todo lo que querés llevar en una sola bag",precio:900,pictureUrl:"https://images.unsplash.com/photo-1512415031623-5c8392938dc4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"},
+            {id:"2",tittle:"Remera",description:"La comodidad ante todo",precio:600,pictureUrl:"https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"},
+            {id:"3",tittle:"Campera",description:"Para época de frío",precio:570,pictureUrl:"https://images.unsplash.com/photo-1551488831-68b4d0c92c13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"},
+            {id:"4",tittle:"Remera Manga Larga",description:"Para esos días de otoño",precio:600,pictureUrl:"https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=464&q=80"},
+            {id:"5",tittle:"Accesorio",description:"Para que luzcas único",precio:1000,pictureUrl:"https://images.unsplash.com/photo-1491336477066-31156b5e4f35?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"}
         ];
         setItems(i); 
         // (leer items funcion que se ejecute desp de un tiempo)
@@ -19,7 +19,7 @@ function ItemLIst() {
     }
 
     useEffect(()=>{
-leerItems();
+        leerItems();
     },[])
 
     return (
@@ -27,7 +27,7 @@ leerItems();
         {items && items.length ?
             <>
             {items.map((item)=>{
-                return <Item id={item.id} tittle={item.tittle} description={item.description} precio={item.precio} pictureUrl={item.pictureUrl} ></Item>
+                return <Item key={item.id} id={item.id} tittle={item.tittle} description={item.description} precio={item.precio} pictureUrl={item.pictureUrl} ></Item>
             })}
             </>
             :

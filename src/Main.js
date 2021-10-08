@@ -6,15 +6,15 @@ import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'APRENDIZAJE INTEGRAL',
+    title: 'LOOKS ÚNICOS',
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'EXPERTOS EN LA MATERIA',
+    title: 'ACCESORIOS IDEALES',
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'PUBLICACIONES INMEDIATAS',
+    title: 'LA MODA VISTE A TU MANERA',
   },
 ];
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    backgroundColor: '#f9c2ff',
+    backgroundColor: 'black',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     textAlign:'center',
+    color: "white"
   },
 });
 
