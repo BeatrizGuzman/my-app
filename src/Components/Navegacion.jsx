@@ -23,6 +23,9 @@ function Navegacion() {
             <li className="nav-item">
               <Link className="nav-link" to='/nosotros' style={{ color: "white"}}>Quienes somos :)</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to='/carrito' style={{ color: "white"}}>¡Carrito!</Link>
+            </li>
           </ul>
         </div>
       </nav>

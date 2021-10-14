@@ -22,7 +22,7 @@ function ItemLIst() {
         <div className="container">
             <div className="row">
                 {items.length>0 && items.map((item)=>{
-                    return <Item id={item.id} category={item.category} image={item.image} price={item.price} title={item.title}/>
+                    return <Item key={item.id} id={item.id} category={item.category} image={item.image} price={item.price} title={item.title}/>
                 })
                 }
             </div>
