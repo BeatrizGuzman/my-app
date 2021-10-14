@@ -9,7 +9,7 @@ function Navegacion() {
                 <center>
                     <h1 style={{ color: "white"}}>COMODYET</h1>
                     <img className="pic" src={pic} alt='carrito'/>
-                    <i className="material-icons" style={{ color: "white"}}> Una E-commerce de prendas únicas destinada especialmente para vos</i>
+                    <i className="material-icons" style={{ color: "white"}}> Una E-commerce de prendas únicas destinada especialmente para vos </i>
                 </center>
             </Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
