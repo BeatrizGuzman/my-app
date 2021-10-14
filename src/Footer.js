@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <footer>
-            <p>&copy; Copyright 2021 - Titi Guzmán</p>
+            <p>&copy; Copyright 2021 - Titi Guzmán Alsina</p>
         </footer>
     );
 }
