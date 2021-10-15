@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext";
 
+
 function Item({id,category,image,price,title}) {
 
-  const [items,setItems]= useContext(CartContext)
+  const [items,setItems]= useContext(CartContext);
+  // const [quantity, setQuantity]= useState();
+  // const history=useHistory();
 
 function agregar () {
   const producto = {
@@ -37,5 +40,6 @@ function agregar () {
       </div>
   );
 }
+
 
 export default Item;

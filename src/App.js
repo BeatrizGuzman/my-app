@@ -10,7 +10,6 @@ import Carrito from './views/Carrito';
 import { CartProvider } from './CartContext';
 import Cart from './Components/Cart';
 
-
 function App() {
   return (
     <div>
