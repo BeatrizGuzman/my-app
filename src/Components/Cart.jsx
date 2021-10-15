@@ -4,7 +4,7 @@ function Cart() {
   return (
     <div className="wrapper">
       <h2 className="headline-1">Cart</h2>
-      <p className="body">Here will go a cart component soon...</p>
+      <p className="body">continuará</p>
       <div className="separador"></div>
     </div>
   )

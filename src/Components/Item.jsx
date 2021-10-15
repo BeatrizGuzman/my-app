@@ -5,7 +5,7 @@ import { CartContext } from "../CartContext";
 
 function Item({id,category,image,price,title}) {
 
-  const [items,setItems]= useContext(CartContext);
+  const [items,task]= useContext(CartContext);
   // const [quantity, setQuantity]= useState();
   // const history=useHistory();
 
@@ -20,7 +20,7 @@ function agregar () {
 
  const vista = items;
  vista.push(producto);
-  setItems(vista)
+  task.setItems(vista)
   console.log(items);
 }
 
