@@ -33,8 +33,8 @@ function agregar () {
             <p className="card-text">
             {category} - {price} 
             </p>
-            <Link className="btn btn-primary" to={'/producto/'+id}>VER</Link>
-            <button className="btn btn-primary" onClick={agregar}>Agregar al Carrito</button>
+            <Link className="btn btn-light" to={'/producto/'+id}>VER</Link>
+            <button className="btn btn-dark" onClick={agregar}>Agregar al Carrito</button>
         </div>
         </div>
       </div>

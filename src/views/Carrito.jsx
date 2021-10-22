@@ -12,7 +12,6 @@ function Carrito () {
     
 useEffect(() => {
     setTotal(task.total())
-
 },[items])
 
 
@@ -20,21 +19,30 @@ useEffect(() => {
         <>
         <Navegacion/>
         <div className="container">
-            {items.map((item,index)=> { 
-            return (
-                <ul className="list-group" key={index} >
-                    <img src={item.image} width="100px" alt="imagen" />
-                    <li className="list-group-item list-group-item-primary">{item.title}</li>
-                    <li className="list-group-item list-group-item-secondary">{item.price}</li>
-                    <div>
-                    <button onClick={()=>task.borrarItem(item.id)}>Borrar</button>
-                    </div>
-                </ul>
-                )
-             })}
+            { items.length === 0  ? 
+            <h1><strong><em>No hay productos seleccionados :)</em></strong></h1> : (
+                
+                
+            items.map((item,index)=> { 
+                return (
+                    <ul className="list-group" key={index} >
+                        <img src={item.image} width="100px" alt="imagen" />
+                        <li className="list-group-item list-group-item-primary">{item.title}</li>
+                        <li className="list-group-item list-group-item-secondary">{item.price}</li>
+                        <div>
+                        <button onClick={()=>task.borrarItem(item.id)}>Borrar</button>
+                        </div>
+                    </ul>
+                    )
+                })
+            )}
+            
              <h2>Total: {total}</h2>
              <div>
-             <Link to={`/cart`}>Finalizar compra</Link>
+             <Link to={`/cart`} activeStyle={{
+    fontWeight: "bold",
+    color: "red"
+  }}>Finalizar compra</Link>
             </div>
         </div>
         </>

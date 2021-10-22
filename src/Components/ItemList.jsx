@@ -1,28 +1,49 @@
 import React, { useEffect, useState } from 'react'
+import { firestore } from '../firebase';
+import { useParams } from "react-router";
 import Item from './Item';
+
+
 
 function ItemLIst() {
 
     const [items,setItems]=useState([]);
-
-    const leerItems=()=>{
-        fetch('https://fakestoreapi.com/products')
-        .then(res=>res.json())
-        .then((resp)=>{
-            console.log(resp);
-            setItems(resp)
-        });
-    }
+    const {id} = useParams();
 
     useEffect(() => {
-        leerItems();
-    },[])
+
+    //referencia de la db
+    const db = firestore
+    //referencia de la collection 
+    const collection = db.collection("productos")
+    //consulta (get traer. where filtro. doc pedis el que necesitás . add agregar)
+    const query = collection.get()
+        query
+        .then((resultado)=>{
+            const documentos = resultado.docs
+
+            const array_final_de_productos = []
+
+            documentos.forEach(producto=>{
+                const id = producto.id
+                const el_resto = producto.data()
+                const producto_final= {id,...el_resto}
+                array_final_de_productos.push(producto_final)
+            })
+
+            setItems(array_final_de_productos)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+
+    },[id])
 
     return (
         <div className="container">
             <div className="row">
                 {items.length>0 && items.map((item)=>{
-                    return <Item key={item.id} id={item.id} category={item.category} image={item.image} price={item.price} title={item.title}/>
+                    return <Item key={item.id} id={item.id} category={item.category} price={item.price} image={item.image} title={item.title}/>
                 })
                 }
             </div>
