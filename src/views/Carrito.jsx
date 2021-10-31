@@ -39,10 +39,7 @@ useEffect(() => {
             
              <h2>Total: {total}</h2>
              <div>
-             <Link to={`/cart`} activeStyle={{
-    fontWeight: "bold",
-    color: "red"
-  }}>Finalizar compra</Link>
+             <Link to={`/cart`} type="button" class="btn btn-secondary">Finalizar compra</Link>
             </div>
         </div>
         </>

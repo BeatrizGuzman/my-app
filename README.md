@@ -1,9 +1,36 @@
-# TRABAJO DE React JS
+# TRABAJO FINAL DE React JS - CODERHOUSE / COMODYET
 
-Una E-commerce de prendas únicas destinadas especialmente para vos
+¡Una E-commerce de prendas únicas destinadas especialmente para vos!
 
-Explicación: El objetivo es que las personas entren al detalle para que puedan ver las características específicas del producto, mientras que en home no se lo muestre. De esta forma, llama la atención y funciona como una especie de pandora. 
+Este proyecto se realizó con fines académicos, tratando de respetar las mejores prácticas obtenidas en clase, en el marco del curso de ReactJS brindado por CoderHouse.
 
-Se realizó de acuerdo a lo visto en las clases. Especialmente basado en el after de Andrés Camilo Cardona Londoño.
+El proyecto consiste en la realización de un e-commerce de prendas de ropa, denominada COMODYET, a través de la cual se podrán probar las principales funcionalidades aprendidas.
+
+# Tecnologías usadas
+
+* Firestore
+* React
+* React Dom
+* React Router
+* Boostrap (optimizado para React) (https://react-bootstrap.github.io/), para la utilización de componentes pre-armados, con estilos pre-definidos, los cuales fueron adaptados para su mejor uso.
+
+# ¿Cómo correr este proyecto?
+
+1.- Instalar la ultima version de NodeJs.
+
+2.- Crear una cuenta en Firebase y primer App para tener las credenciales.
+
+# Pasos a seguir
+
+1.- Hacer un Fork de este proyecto para tener una copia tuya, luego Clone.
+
+2.- Llenar las credenciales de Firebase en el archivo ./src/firebase.jsx
+
+3.- Posicionarse en la
+ carpeta raiz del proyecto y por linea de comandos, terminal o consola escribir 'npm install' (sin las comillas), esto instalará todas las dependencias necesarias para correr el proyecto.
+
+4.- Una vez finalizado el paso anterior escribir 'npm start', lo cual hará visible el proyecto en el navegador en http://localhost:3000
+
+
 
 MARÍA BEATRIZ GUZMÁN ALSINA - CODERHOUSE

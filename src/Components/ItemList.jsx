@@ -12,11 +12,8 @@ function ItemLIst() {
 
     useEffect(() => {
 
-    //referencia de la db
     const db = firestore
-    //referencia de la collection 
     const collection = db.collection("productos")
-    //consulta (get traer. where filtro. doc pedis el que necesitás . add agregar)
     const query = collection.get()
         query
         .then((resultado)=>{
@@ -47,7 +44,6 @@ function ItemLIst() {
                 })
                 }
             </div>
-            
         </div>
     )
 }
