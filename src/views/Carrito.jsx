@@ -6,8 +6,8 @@ import Navegacion from '../Components/Navegacion';
 
 function Carrito () {
 
-    const [items, task, cart]= useContext(CartContext);
-     const [total,setTotal]= useState(0);
+    const [items, task]= useContext(CartContext);
+    const [total,setTotal]= useState(0);
 
     //  const generarOrden = () =>{
 
@@ -26,6 +26,7 @@ function Carrito () {
     
 useEffect(() => {
     setTotal(task.total())
+     // eslint-disable-next-line react-hooks/exhaustive-deps
 },[items])
 
 
@@ -51,9 +52,9 @@ useEffect(() => {
                 })
             )}
             
-             <h2>Total: {total}</h2>
+             <h2>Total: $ {total}</h2>
              <div>
-             <Link to={`/cart`} type="button" class="btn btn-secondary">Finalizar compra</Link>
+             <Link to={`/cart`} type="button" className="btn btn-secondary">Finalizar compra</Link>
              {/* <button onClick={generarOrden}>Finalizar compra</button> */}
             </div>
         </div>

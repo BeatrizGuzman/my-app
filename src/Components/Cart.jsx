@@ -1,12 +1,13 @@
-import React, {useState, useContext} from 'react'
+import React, {useState} from 'react'
 import firebase from "firebase/app"
 import "firebase/firestore"
-import { CartContext } from "./../CartContext"
+//import { CartContext } from "./../CartContext"
 import { firestore } from '../firebase'
+import { Link } from 'react-router-dom'
 
 export const Checkout = () => {
 
-  const {carrito, total} = useContext(CartContext)
+  // const {carrito, setTotal} = useContext(CartContext)
 
   const [values, setValues] = useState({
     nombre: '',
@@ -50,7 +51,7 @@ const handleSubmit = (e) => {
 //         ...values
 //       },
 //     items : carrito, 
-//     total : total,
+//     total : setTotal,
 //     }
 
 //     console.log(orden)
@@ -73,7 +74,8 @@ const handleSubmit = (e) => {
     const query = collection.add(orden_para_guardar)
 
     query
-      .then((docRef)=>{
+      .then((docRef)=>{ 
+        alert("orden de compra generada automáticamente ");
         console.log(docRef)
       })
   } 
@@ -126,7 +128,10 @@ const handleSubmit = (e) => {
          />
          {values.tel.length === 0 && <small>Este campo es obligatorio</small>}
 
+         <hr />
+
          <button className="btn btn-success" type="submit">Finalizar</button>
+         <Link to="/" type="button" className="btn btn-dark">Ir al Home</Link> 
      </form>
  </div>
  </div>
