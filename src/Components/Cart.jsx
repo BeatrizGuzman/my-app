@@ -130,7 +130,7 @@ const handleSubmit = (e) => {
 
          <hr />
 
-         <button className="btn btn-success" type="submit">Finalizar</button>
+         <button className="btn btn-secondary" type="submit">Finalizar</button>
          <Link to="/" type="button" className="btn btn-dark">Ir al Home</Link> 
      </form>
  </div>
