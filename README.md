@@ -29,6 +29,6 @@ El proyecto consiste en la realización de un e-commerce de prendas de ropa, den
 
 4.- Una vez finalizado el paso anterior escribir 'npm start', lo cual hará visible el proyecto en el navegador en http://localhost:3000
 
-https://user-images.githubusercontent.com/84637252/140450261-a1634a5a-3cb1-406d-bdfb-38b5bcaeb0ee.mp4
+https://user-images.githubusercontent.com/84637252/140457900-a61431c0-d79d-4bf8-95ca-b9acd08c9747.mp4
 
 MARÍA BEATRIZ GUZMÁN ALSINA - CODERHOUSE
