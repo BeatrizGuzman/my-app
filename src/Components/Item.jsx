@@ -1,45 +1,19 @@
-import React, { useContext} from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../CartContext";
+import { Link } from 'react-router-dom';
 
-
-function Item({id,category,image,price,title}) {
-
-  const [items,task]= useContext(CartContext);
-  // const [quantity, setQuantity]= useState();
-  // const history=useHistory();
-
-function agregar () {
-  const producto = {
-    id:id,
-    category:category,
-    image:image,
-    price:price,
-    title:title
-  }
-
- const vista = items;
- vista.push(producto);
-  task.setItems(vista)
-  console.log(items);
-}
+function Item({ item }) {
+  let { id, title, image } = item;
 
   return (
-      <div className="col">
-        <div className="card" style={{ width: "18rem" }}>
-        <img className="card-img-top" src={image} alt="imagen_producto" />
-        <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">
-            {category} - {price} 
-            </p>
-            <Link className="btn btn-light" to={'/producto/'+id}>VER</Link>
-            <button className="btn btn-dark" onClick={agregar}>Agregar al Carrito</button>
-        </div>
+    <div>
+      <div style={{ width: "18.8rem", marginBottom: "5rem", border: "1px solid grey", }}>
+        <img src={image} alt="img" style={{ width: "300px", height: "357px" }} />
+        <div style={{ marginBottom: "1rem", textAlign: "center" }}>
+          <h5 style={{ fontSize: "1rem", marginBottom: "1rem" }}>{title}</h5>
+          <Link className="botones" style={{ color: "black", fontWeight: "bold", fontSize: "1rem" }} to={`/item/${id}`}>VER</Link>
         </div>
       </div>
+    </div>
   );
 }
-
 
 export default Item;

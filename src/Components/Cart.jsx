@@ -1,141 +1,48 @@
-import React, {useState} from 'react'
-import firebase from "firebase/app"
-import "firebase/firestore"
-//import { CartContext } from "./../CartContext"
-import { firestore } from '../firebase'
-import { Link } from 'react-router-dom'
+import CartList from './CartList';
+import { firestore } from '../firebase';
+import { useCart } from './../CartContext';
+import { Link } from 'react-router-dom';
+import Order from './Order';
+import { useModal } from './ModalContext';
 
-export const Checkout = () => {
+function Cart() {
+    const { cart, total, clear } = useCart();
+    const { setOrden, orden } = useModal();
 
-  // const {carrito, setTotal} = useContext(CartContext)
+    function guardarOrden(buyer) {
 
-  const [values, setValues] = useState({
-    nombre: '',
-    apellido: '',
-    email: '',
-    tel: ''
-})
+        const order = {
+            buyer: buyer,
+            cart: cart,
+            total: total
+        };
 
-const handleInputChange = (e) => {
-    setValues({
-        ...values,
-        [e.target.name]: e.target.value
-    })
-}
+        const ordersRef = firestore.collection("ordenes");
+        const query = ordersRef.add(order);
 
-const handleSubmit = (e) => {
-
-    e.preventDefault()
-
-    if (values.nombre.length < 3) {
-      alert("Nombre inválido")
-      return
-  }
-
-  if (values.apellido.length < 3) {
-    alert("Apellido inválido")
-    return
-  }
-  if (values.email.length < 3) {
-      alert("Email inválido")
-      return
-  }
-  if (values.tel.length < 7) {
-      alert("Teléfono inválido")
-      return
-  }
-
-//     const orden = {
-
-//     buyer: {
-//         ...values
-//       },
-//     items : carrito, 
-//     total : setTotal,
-//     }
-
-//     console.log(orden)
-// }
-
- 
-    const orden_para_guardar = {
-      buyer : {
-        name : "Beatriz",
-        phone : "3875048687",
-        email : "titiguzman3@gmail.com"
-      },
-      items : [{id:1, title:"Pantalón"}],
-      date : firebase.firestore.Timestamp.now(),
-      total : 100, 
+        query.then(result => {
+            setOrden(`Orden de compra generada automáticamente:  ${result.id}`);
+            clear();
+        }).catch(error => console.log("Ocurrió un error. Vuelve a intentarlo.")
+        ).finally(() => orden()
+        );
     }
 
-    const db = firestore
-    const collection = db.collection("ordenes")
-    const query = collection.add(orden_para_guardar)
-
-    query
-      .then((docRef)=>{ 
-        alert("orden de compra generada automáticamente ");
-        console.log(docRef)
-      })
-  } 
-  
-  return (
-     <div>
-     <h2>Complete sus datos</h2>
-     <hr/>
-     {/* listado de la compra */}
-     <div className="container my-5">
-     <form onSubmit={handleSubmit}>
-         <h2>Formulario</h2>
-         <input
-             className="form-control my-2"
-             type="text"
-             placeholder="Nombre"
-             name="nombre"
-             value={values.nombre}
-             onChange={handleInputChange}
-             />
-         {values.nombre.length === 0 && <small>Este campo es obligatorio</small>}
-
-         <input
-             className="form-control my-2"
-             type="text"
-             placeholder="Apellido"
-             name="apellido"
-             value={values.apellido}
-             onChange={handleInputChange}
-             />
-         {values.apellido.length === 0 && <small>Este campo es obligatorio</small>}
-
-         <input
-             className="form-control my-2"
-             type="email"
-             placeholder="Email"
-             name="email"
-             value={values.email}
-             onChange={handleInputChange}
-         />
-         {values.email.length === 0 && <small>Este campo es obligatorio</small>}
-
-         <input
-             className="form-control my-2"
-             type="tel"
-             placeholder="Teléfono"
-             name="tel"
-             value={values.tel}
-             onChange={handleInputChange}
-         />
-         {values.tel.length === 0 && <small>Este campo es obligatorio</small>}
-
-         <hr />
-
-         <button className="btn btn-secondary" type="submit">Finalizar</button>
-         <Link to="/" type="button" className="btn btn-dark">Ir al Home</Link> 
-     </form>
- </div>
- </div>
-  )
+    return (cart.length > 0
+        ?
+        <>
+            <CartList cart={cart} />
+            <div>
+                <h2>Total: $ {total}</h2>
+            </div>
+            <Order guardarOrden={guardarOrden} orden={orden} setOrden={setOrden} />
+        </>
+        :
+        <>
+            <h1><strong><em>No hay productos seleccionados: ) <Link to="/" className="botones">Ir al Home</Link> </em></strong></h1>
+            <hr />
+        </>
+    );
 }
-
-export default Checkout
+ 
+export default Cart

@@ -12,7 +12,6 @@ El proyecto consiste en la realización de un e-commerce de prendas de ropa, den
 * React
 * React Dom
 * React Router
-* Boostrap (optimizado para React) (https://react-bootstrap.github.io/), para la utilización de componentes pre-armados, con estilos pre-definidos, los cuales fueron adaptados para su mejor uso.
 
 # ¿Cómo correr este proyecto?
 
@@ -26,11 +25,10 @@ El proyecto consiste en la realización de un e-commerce de prendas de ropa, den
 
 2.- Llenar las credenciales de Firebase en el archivo ./src/firebase.jsx
 
-3.- Posicionarse en la
- carpeta raiz del proyecto y por linea de comandos, terminal o consola escribir 'npm install' (sin las comillas), esto instalará todas las dependencias necesarias para correr el proyecto.
+3.- Posicionarse en la carpeta raiz del proyecto y por linea de comandos, terminal o consola escribir 'npm install' (sin las comillas), esto instalará todas las dependencias necesarias para correr el proyecto.
 
 4.- Una vez finalizado el paso anterior escribir 'npm start', lo cual hará visible el proyecto en el navegador en http://localhost:3000
 
-
+https://user-images.githubusercontent.com/84637252/140450261-a1634a5a-3cb1-406d-bdfb-38b5bcaeb0ee.mp4
 
 MARÍA BEATRIZ GUZMÁN ALSINA - CODERHOUSE

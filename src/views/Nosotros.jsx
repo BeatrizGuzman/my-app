@@ -1,10 +1,10 @@
 import React from 'react'
-import Navegacion from '../Components/Navegacion'
+import Main from '../Components/Main'
 
 function Nosotros() {
     return (
         <div>
-            <Navegacion/>
+            <Main />
             <p style={{ margin: "2rem" }}>Somos fuerza, somos revolución, somos la nueva generación. 
             <br></br>
             <em>El secreto está en saber escucharnos. Tus palabras son las que pueden cambiarnos.</em> 
